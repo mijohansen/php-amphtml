@@ -326,7 +326,7 @@ class CodeGen {
 
         $code = self::generate_function_file($all_tags);
         $functions_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . "functions.php";
-        self::write_file($functions_filename, $code);
+        self::write_file($functions_filename, "<?php" . PHP_EOL . PHP_EOL . $code);
 
     }
 }

@@ -1,5 +1,7 @@
 {
   "name": "mijohansen/amphtml",
+  "description": "Provides shorthand functions and classes for amphtml generation.",
+  "type": "library",
   "authors": [
     {
       "name": "Michael Johansen",
@@ -7,17 +9,25 @@
     }
   ],
   "require": {
+    "oyejorge/less.php": "v1.7.0.14"
+  },
+  "require-dev": {
     "xtazii/amp-library": "^1.1",
-    "oyejorge/less.php": "v1.7.0.14",
     "gossi/php-code-generator": "^0.5.0",
-    "doctrine/inflector": "^1.3"
+    "doctrine/inflector": "1.1.0",
+    "doctrine/instantiator": "1.0.5",
+    "phpunit/phpunit": "^4.8"
   },
   "scripts": {
+    "test": "php55 vendor/bin/phpunit",
     "codegen": "AmpHTML\\CodeGen::generate"
   },
   "autoload": {
     "psr-4": {
       "AmpHTML\\": "src"
-    }
+    },
+    "files": [
+      "src/functions.php"
+    ]
   }
 }
